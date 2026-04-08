@@ -21,7 +21,7 @@ int main() {
     Student* arr = (Student*)malloc(sizeof(Student) * N);
 
     // 파일 열기
-    fp = fopen("name_list.txt", "r");
+    fp = fopen("name_list1.txt", "r");
     if (fp == NULL) {
         printf("파일 열기 실패\n");
         return 0;
@@ -48,22 +48,27 @@ int main() {
 
     // 최고 / 최저 / 평균
     int max = 0, min = 0;
-    int sum = 0;
+int sum = 0;
 
-    for (int i = 0; i < N; i++) {
-        if (arr[i].score > arr[max].score) max = i;
-        if (arr[i].score < arr[min].score) min = i;
-        sum += arr[i].score;
-    }
+for (int i = 0; i < N; i++) {
+    if (arr[i].score > arr[max].score) max = i;
+    if (arr[i].score < arr[min].score) min = i;
+    sum += arr[i].score;
+}
 
-    printf("\n최고점 학생\n");
-    printf("이름: %s 학번: %d 점수: %d\n", arr[max].name, arr[max].id, arr[max].score);
+// 출력
+printf("\n[최고점 학생]\n");
+printf("이름: %s\n", arr[max].name);
+printf("학번: %d\n", arr[max].id);
+printf("점수: %d\n", arr[max].score);
 
-    printf("\n최저점 학생\n");
-    printf("이름: %s 학번: %d 점수: %d\n", arr[min].name, arr[min].id, arr[min].score);
+printf("\n[최저점 학생]\n");
+printf("이름: %s\n", arr[min].name);
+printf("학번: %d\n", arr[min].id);
+printf("점수: %d\n", arr[min].score);
 
-    printf("\n평균 점수: %.2f\n", (float)sum / N);
-
-    free(arr);
+printf("\n[평균 점수]\n");
+printf("%.2f\n", (float)sum / N);
+free(arr);
     return 0;
 }
