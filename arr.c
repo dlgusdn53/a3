@@ -21,7 +21,7 @@ int main() {
     Student* arr = (Student*)malloc(sizeof(Student) * N);
 
     // 파일 열기
-    fp = fopen("C:\\Users\\user\\Desktop\\name_list.txt", "r");
+    fp = fopen("name_list.txt", "r");
     if (fp == NULL) {
         printf("파일 열기 실패\n");
         return 0;
